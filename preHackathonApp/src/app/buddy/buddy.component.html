@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="buddy-icon">
+    <img src="assets/buddy.png" width="300px" height="300px">
+    <button class="add-btn" (click)="generateTask()"> GENERATE TASKS</button>
+  </div>
+  <div class="tasks">
+    <div class="single-task" *ngFor="let task of tasks">
+      <p> {{task.desc}}</p>
+      <p> {{task.type}}</p>
+    </div>
+  </div>
+</div>

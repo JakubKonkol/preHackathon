@@ -1,0 +1,51 @@
+.container{
+  background-color: #598f58;
+  height: 85vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+*{
+  background-color: #598f58;
+}
+.buddy-icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.add-btn{
+  background-color: #336932;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.add-btn:hover{
+  background-color: #034902;
+  color: white;
+  cursor: pointer;
+}
+.tasks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+}
+.single-task{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
