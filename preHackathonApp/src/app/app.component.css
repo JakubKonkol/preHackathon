@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.container > *{
+  margin: 1rem;
+}
+.left, .right{
+  flex-basis: 20%;
+}
+.center{
+  flex-basis: 60%;
+}
+
