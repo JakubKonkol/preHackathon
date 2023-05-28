@@ -15,6 +15,7 @@ public class PreHackathonServerApplication {
 		System.out.println("Hello bitch !");
 		System.out.println("Hello bitch !");
 		System.out.println("Hello bitch !");
+		System.out.println("Dupa");
 		SpringApplication.run(PreHackathonServerApplication.class, args);
 
 	}
