@@ -2,9 +2,13 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 1rem;
+  background-color: #a9cca9;
 }
 .container > *{
   margin: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  background-color: #598f58;
 }
 .left, .right{
   flex-basis: 20%;
