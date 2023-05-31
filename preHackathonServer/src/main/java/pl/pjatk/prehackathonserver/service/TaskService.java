@@ -21,7 +21,7 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
-    public Task getTask(long taskId) {
+    public Task getTaskById(long taskId) {
         var optionalTask =  taskRepository.findById(taskId);
 
         if(optionalTask.isEmpty()) {
@@ -31,7 +31,7 @@ public class TaskService {
         return optionalTask.get();
     }
 
-    public Task updateTask(long taskId, Task updatedTask) {
+    public Task updateTaskById(long taskId, Task updatedTask) {
         var optionalTask =  taskRepository.findById(taskId);
 
         if(optionalTask.isEmpty()) {
@@ -51,7 +51,7 @@ public class TaskService {
         return taskToUpdate;
     }
 
-    public void deleteTask(long taskId) {
+    public void deleteTaskById(long taskId) {
         var optionalTask =  taskRepository.findById(taskId);
 
         if(optionalTask.isEmpty()) {

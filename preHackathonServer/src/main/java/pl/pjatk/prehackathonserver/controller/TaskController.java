@@ -14,29 +14,29 @@ import java.util.List;
 public class TaskController {
     private final TaskService taskService;
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<Task> saveTask(@RequestBody Task task){
         return ResponseEntity.ok(taskService.save(task));
     }
 
-    @GetMapping
+    @GetMapping("/findAll")
     public ResponseEntity<List<Task>> getAllTasks(){
         return ResponseEntity.ok(taskService.findAll());
     }
 
-    @GetMapping("/{taskId}")
+    @GetMapping("/findById/{taskId}")
     public ResponseEntity<Task> getTask(@PathVariable long taskId) {
-        return ResponseEntity.ok(taskService.getTask(taskId));
+        return ResponseEntity.ok(taskService.getTaskById(taskId));
     }
 
-    @PutMapping("/{taskId}")
+    @PutMapping("/update/{taskId}")
     public ResponseEntity<Task> updateTask(@PathVariable long taskId, @RequestBody Task task) {
-        return ResponseEntity.ok(taskService.updateTask(taskId, task));
+        return ResponseEntity.ok(taskService.updateTaskById(taskId, task));
     }
 
-    @DeleteMapping("/{taskId}")
+    @DeleteMapping("/deleteById{taskId}")
     public ResponseEntity<String> deleteTask(@PathVariable long taskId){
-        taskService.deleteTask(taskId);
+        taskService.deleteTaskById(taskId);
         return ResponseEntity.ok("Task of id: " + taskId + " has been deleted");
     }
 }
