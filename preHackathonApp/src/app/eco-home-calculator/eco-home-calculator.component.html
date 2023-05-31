@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="devices">
+    <p> Devices: </p>
+    <div class="all-devices">
+      <div class="device" *ngFor="let device of devices">
+        <p> {{device.name}}</p>
+        <button (click)="addDevice(device)">Add</button>
+      </div>
+    </div>
+    <p> Your devices: </p>
+    <div class="your-devices">
+      <div class="device" *ngFor="let device of yourDevices">
+        <p> {{device.name}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <p> Total usage is: {{calculateTotalDailyPowerUsage()/1000}}kW/day</p>
+  </div>
+</div>

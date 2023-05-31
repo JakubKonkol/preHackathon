@@ -3,3 +3,6 @@
   height: 85vh;
   border-radius: 10px;
 }
+.container > *{
+  margin: 1rem;
+}

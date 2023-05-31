@@ -7,6 +7,7 @@ import { StatsComponent } from './stats/stats.component';
 import { SummaryComponent } from './summary/summary.component';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { EcoHomeCalculatorComponent } from './eco-home-calculator/eco-home-calculator.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UserComponent } from './user/user.component';
     StatsComponent,
     SummaryComponent,
     HeaderComponent,
-    UserComponent
+    UserComponent,
+    EcoHomeCalculatorComponent
   ],
   imports: [
     BrowserModule
