@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import pl.pjatk.prehackathonserver.model.enums.Priority;
+import pl.pjatk.prehackathonserver.model.enums.Status;
 
 @Entity
 @Data
@@ -15,4 +16,5 @@ public class Task {
     private Long id;
     private String desc;
     private Priority priority;
+    private Status status;
 }

@@ -3,8 +3,10 @@ package pl.pjatk.prehackathonserver.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.pjatk.prehackathonserver.model.Task;
+import pl.pjatk.prehackathonserver.model.enums.Status;
 import pl.pjatk.prehackathonserver.repository.TaskRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -12,6 +14,11 @@ import java.util.NoSuchElementException;
 @RequiredArgsConstructor
 public class TaskService {
     private final TaskRepository taskRepository;
+
+    public List<Task> findTasksByStatus(Status status) {
+        return taskRepository.findTasksByStatus(status);
+    }
+
 
     public Task save(Task task) {
         return taskRepository.save(task);

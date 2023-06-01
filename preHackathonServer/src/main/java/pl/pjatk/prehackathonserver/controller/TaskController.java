@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.pjatk.prehackathonserver.model.Task;
+import pl.pjatk.prehackathonserver.model.enums.Status;
 import pl.pjatk.prehackathonserver.service.TaskService;
 
 import java.util.List;
@@ -13,6 +14,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TaskController {
     private final TaskService taskService;
+
+    @GetMapping("/findByStatus/{status}")
+    public ResponseEntity<List<Task>> findTasksByStatus (@PathVariable("status") Status status) {
+        return ResponseEntity.ok(taskService.findTasksByStatus(status));
+    }
 
     @PostMapping("/save")
     public ResponseEntity<Task> saveTask(@RequestBody Task task) {
