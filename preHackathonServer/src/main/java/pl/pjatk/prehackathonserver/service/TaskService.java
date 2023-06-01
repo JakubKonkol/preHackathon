@@ -22,9 +22,9 @@ public class TaskService {
     }
 
     public Task getTaskById(long taskId) {
-        var optionalTask =  taskRepository.findById(taskId);
+        var optionalTask = taskRepository.findById(taskId);
 
-        if(optionalTask.isEmpty()) {
+        if (optionalTask.isEmpty()) {
             throw new NoSuchElementException("There's no task with given id");
         }
 
@@ -32,19 +32,19 @@ public class TaskService {
     }
 
     public Task updateTaskById(long taskId, Task updatedTask) {
-        var optionalTask =  taskRepository.findById(taskId);
+        var optionalTask = taskRepository.findById(taskId);
 
-        if(optionalTask.isEmpty()) {
+        if (optionalTask.isEmpty()) {
             throw new NoSuchElementException("There's no task with given id");
         }
 
         Task taskToUpdate = optionalTask.get();
 
-        if(updatedTask.getDesc() != null) {
+        if (updatedTask.getDesc() != null) {
             taskToUpdate.setDesc(updatedTask.getDesc());
         }
 
-        if(updatedTask.getPriority() != null) {
+        if (updatedTask.getPriority() != null) {
             taskToUpdate.setPriority(updatedTask.getPriority());
         }
 
@@ -52,9 +52,9 @@ public class TaskService {
     }
 
     public void deleteTaskById(long taskId) {
-        var optionalTask =  taskRepository.findById(taskId);
+        var optionalTask = taskRepository.findById(taskId);
 
-        if(optionalTask.isEmpty()) {
+        if (optionalTask.isEmpty()) {
             throw new NoSuchElementException("There's no task with given id");
         }
 

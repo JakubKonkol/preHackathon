@@ -15,12 +15,12 @@ public class TaskController {
     private final TaskService taskService;
 
     @PostMapping("/save")
-    public ResponseEntity<Task> saveTask(@RequestBody Task task){
+    public ResponseEntity<Task> saveTask(@RequestBody Task task) {
         return ResponseEntity.ok(taskService.save(task));
     }
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<Task>> getAllTasks(){
+    public ResponseEntity<List<Task>> getAllTasks() {
         return ResponseEntity.ok(taskService.findAll());
     }
 
@@ -35,7 +35,7 @@ public class TaskController {
     }
 
     @DeleteMapping("/deleteById{taskId}")
-    public ResponseEntity<String> deleteTask(@PathVariable long taskId){
+    public ResponseEntity<String> deleteTask(@PathVariable long taskId) {
         taskService.deleteTaskById(taskId);
         return ResponseEntity.ok("Task of id: " + taskId + " has been deleted");
     }
