@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import {Device} from "../Device";
-
+export interface Day{
+  day: number;
+  powerUsage: number;
+}
 @Component({
   selector: 'app-eco-home-calculator',
   templateUrl: './eco-home-calculator.component.html',
@@ -14,6 +17,8 @@ export class EcoHomeCalculatorComponent {
     new Device(4, 'Washing Machine', 300, 'assets/wash.webp')
   ]
   yourDevices: Device[] = [];
+  days: Day[] = [];
+
   constructor() { }
   calculateTotalDailyPowerUsage(){
     let total = 0;
@@ -25,5 +30,10 @@ export class EcoHomeCalculatorComponent {
 
   addDevice(device: Device) {
     this.yourDevices.push(device);
+  }
+
+  skipDay() {
+    this.days.push({day: this.days.length + 1, powerUsage: this.calculateTotalDailyPowerUsage()});
+    this.yourDevices = [];
   }
 }

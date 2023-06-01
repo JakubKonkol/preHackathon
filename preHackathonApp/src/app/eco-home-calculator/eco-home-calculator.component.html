@@ -16,5 +16,12 @@
   </div>
   <div class="result">
     <p> Total usage is: {{calculateTotalDailyPowerUsage()/1000}}kW/day</p>
+    <h3> Your power usage history: </h3>
+    <div class="history">
+      <div class="day" *ngFor="let day of days">
+        <p> Day: {{day.day}} </p>
+        <p> Power usage: {{day.powerUsage}}kW </p>
+      </div>
+    <button (click)="skipDay()"> Skip day </button>
   </div>
 </div>
