@@ -13,6 +13,7 @@ public class User {
     private Long id;
     private String nickname;
     private Double points;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user") -> error
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Task> taskHistory;
 }
